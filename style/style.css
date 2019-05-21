@@ -1,0 +1,22 @@
+/* Overriding bootstrap background color with !important */
+body {
+    background: black !important;
+    font-size: 16px;
+}
+
+.container {
+    background: #0000FF;
+    height: 100vh;
+    border: 8px solid white;
+    position: relative !important;
+}
+
+.timer-div {
+    background:black;
+    position: absolute;
+    bottom: 100px !important;
+    height: 220px;
+    width: 70%;
+    left: 15%;
+    box-shadow: 10px 10px 40px 25px rgba(0, 0, 0, 0.4);
+}
