@@ -9,12 +9,12 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <p>
+        <p className="book-name">
           BOOK NAME
         </p>
-        <h3>Understanding Redux - 1</h3>
+        <h3 className="book-title">Understanding Redux - 1</h3>
 
-        <h4>TOTAL TIME SPENT ON THE PROJECT</h4>
+        <h4 className="total-time">TOTAL TIME SPENT ON THE PROJECT</h4>
         <div className="timer-div">
           <div className="time-content">
             <p className="active-msg">ACTIVE SESSION: <span>MINUTES</span></p>
