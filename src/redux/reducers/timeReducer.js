@@ -7,7 +7,7 @@ import { INCREASE_TIME, DECREASE_TIME, SET_SESSION } from '../actions/types';
 
 const initialState = {
     activeTime: 0,
-    activeSession: ''
+    activeSession: 'days'
 }
 
 export default (state = initialState, action) => {
@@ -15,17 +15,17 @@ export default (state = initialState, action) => {
         case INCREASE_TIME:
             return {
                 ...state,
-                time: state.time + 1000
+                activeTime: state.activeTime + 1000
             }
         case DECREASE_TIME:
             return {
                 ...state,
-                time: state.time - 1000
+                activeTime: state.activeTime - 1000
             }
         case SET_SESSION:
             return {
                 ...state,
-                activeSession: actions.payload
+                activeSession: action.payload
             }
         default:
             return state;

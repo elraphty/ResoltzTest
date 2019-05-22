@@ -13,13 +13,13 @@ export const increaseTime = () => dispatch => {
 
 export const decreaseTime = () => dispatch => {
     dispatch ({
-        type: INCREASE_TIME
+        type: DECREASE_TIME
     });
 }
 
 export const setSession = (session) => dispatch => {
     dispatch ({
-        type: INCREASE_TIME,
+        type: SET_SESSION,
         payload: session
     });
 }
