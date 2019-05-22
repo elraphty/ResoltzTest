@@ -5,8 +5,17 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 // REDUX ACTIONS
-import { setSession, increaseTime, decreaseTime } from '../redux/actions';
+import { 
+  setSession, 
+  increaseTime, 
+  decreaseTime, 
+  setSeconds,
+  setMinutes,
+  setHours,
+  setDays 
+} from '../redux/actions';
 
 class App extends Component {
 
@@ -27,6 +36,10 @@ class App extends Component {
   /** This function will trigger set session redux action it will set the seesion with the parameter sent to the function, the default session is days */
   setTimeSession = (session) => () => {
     return this.props.setSession(session)
+  }
+
+  getTime(){
+    let time = this.props.time.activeTime;
   }
 
   render() {
@@ -58,7 +71,7 @@ class App extends Component {
               </span>
               <span className="time-divider">:</span>
               <span>
-                <h1>11</h1>
+                <h1>{this.getTime}</h1>
                 <p onClick={this.setTimeSession('seconds')}>Seconds</p>
               </span>
             </div>
@@ -77,4 +90,13 @@ const mapStateToProps = state => ({
   time: state.time
 });
 
-export default connect(mapStateToProps, { increaseTime, decreaseTime, setSession })(App)
+export default connect(
+  mapStateToProps, { 
+    increaseTime, 
+    decreaseTime, 
+    setSession ,
+    setSeconds,
+    setMinutes,
+    setHours,
+    setDays
+})(App);

@@ -3,11 +3,23 @@
  * On May 22nd 2019
  */
 
-import { INCREASE_TIME, DECREASE_TIME, SET_SESSION } from '../actions/types';
+import { 
+    INCREASE_TIME, 
+    DECREASE_TIME, 
+    SET_SESSION, 
+    SET_SECONDS, 
+    SET_MINUTES, 
+    SET_HOURS, 
+    SET_DAYS 
+} from '../actions/types';
 
 const initialState = {
     activeTime: 0,
-    activeSession: 'days'
+    activeSession: 'days',
+    seconds: 0,
+    minutes: 0,
+    hours: 0,
+    days: 0
 }
 
 export default (state = initialState, action) => {
@@ -26,6 +38,26 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 activeSession: action.payload
+            }
+        case SET_SECONDS:
+            return {
+                ...state,
+                seconds: action.payload
+            }
+        case SET_MINUTES:
+            return {
+                ...state,
+                minutes: action.payload
+            }
+        case SET_HOURS:
+            return {
+                ...state,
+                hours: action.payload
+            }
+        case SET_DAYS:
+            return {
+                ...state,
+                days: action.payload
             }
         default:
             return state;
