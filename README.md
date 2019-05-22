@@ -14,6 +14,7 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 > cd ResoltzTest
 > npm install
 > npm start
+> then navigate to localhost:8080 on your browser which is the default webpack development port
 ```
 
 #### Not Familiar with Git?
@@ -23,4 +24,4 @@ Click [here](https://github.com/elraphty/ResoltzTest/releases) then download the
 > npm install
 > npm start
 > then navigate to localhost:8080 on your browser which is the default webpack development port
-``
+```
