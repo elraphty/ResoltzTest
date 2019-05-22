@@ -39,6 +39,10 @@ export default class App extends Component {
                 <p>Seconds</p>
               </span>
             </div>
+            <div className="time-actions">
+              <h5>increase</h5>
+              <h5>decrease</h5>
+            </div>
           </div>
         </div>
       </div>
