@@ -3,16 +3,21 @@
 *   on May 21 2019
 */
 
-/* Overriding bootstrap background color with !important */
+/* import google roboto font*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,900i&display=swap');
+
 :root {
     --greyColor: #707070;
-    --dimWhite: #FEFEFA;
+    --dimWhite: azure;
+    --lightGrey: #CCCCCC;
 }
 
+/* Overriding bootstrap background color with !important */
 body {
     background: black !important;
     font-size: 16px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 .container {
@@ -24,21 +29,22 @@ body {
 }
 
 .book-name {
-    color:  #CCCCCC;
+    color: var(--lightGrey);
     margin-top: 35px;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .book-title {
     color: var(--dimWhite);
-    font-size: 35px;
+    font-size: 38px;
     font-weight: bolder;
     margin-bottom: 80px;
 }
 
 .total-time {
-    color: #CCCCCC;
-    font-size: 16px;
+    color: var(--lightGrey);
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -63,6 +69,9 @@ body {
     display: inline-block;
     margin-right: 60px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .time-wrap span:last-child {
@@ -89,13 +98,14 @@ body {
 }
 
 .active-msg {
-    text-align: right;
-    color: var(--greyColor);
-    font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 5px;
     margin-top: -10px;
     margin-right: 40px;
+    font-size: 16px;
+    text-align: right;
+    color: var(--greyColor);
+    font-weight: bold;
 }
 
 .time-actions {
@@ -113,5 +123,5 @@ body {
 }
 
 .time-actions h5:first-child {
-    margin-right: 140px;
+    margin-right: 150px;
 }
