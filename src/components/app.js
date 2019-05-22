@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   /** This function will trigger set session redux action it will set the seesion with the parameter sent to the function, the default session is days */
-  setTimeSession = (session) => {
+  setTimeSession = (session) => () => {
     return this.props.setSession(session)
   }
 
@@ -44,22 +44,22 @@ class App extends Component {
             <div className="time-wrap">
               <span>
                 <h1>11</h1>
-                <p onClick={this.setTimeSession.bind(this, 'days')}>Days</p>
+                <p onClick={this.setTimeSession('days')}>Days</p>
               </span>
               <span className="time-divider">:</span>
               <span>
                 <h1>31</h1>
-                <p onClick={this.setTimeSession.bind(this, 'hours')}>Hours</p>
+                <p onClick={this.setTimeSession('hours')}>Hours</p>
               </span>
               <span className="time-divider">:</span>
               <span>
                 <h1>27</h1>
-                <p onClick={this.setTimeSession.bind(this, 'minutes')}>Minutes</p>
+                <p onClick={this.setTimeSession('minutes')}>Minutes</p>
               </span>
               <span className="time-divider">:</span>
               <span>
                 <h1>11</h1>
-                <p onClick={this.setTimeSession.bind(this, 'seconds')}>Seconds</p>
+                <p onClick={this.setTimeSession('seconds')}>Seconds</p>
               </span>
             </div>
             <div className="time-actions">
