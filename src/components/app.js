@@ -25,12 +25,14 @@ class App extends Component {
 
   /** This function will trigger the redux action that will increase time */
   increaseTimeValue = () => {
-    return this.props.increaseTime();
+    this.props.increaseTime();
+    return this.getTime();
   }
 
   /** This function will trigger the redux action that will decrease time */
   decreaseTimeValue = () => {
-    return this.props.decreaseTime();
+    this.props.decreaseTime();
+    return this.getTime();
   }
 
   /** This function will trigger set session redux action it will set the seesion with the parameter sent to the function, the default session is days */
@@ -38,8 +40,17 @@ class App extends Component {
     return this.props.setSession(session)
   }
 
-  getTime(){
-    let time = this.props.time.activeTime;
+  /** This funtion uses the redux time milliseconds and converts it to seconds, minutes hours and days  */
+  getTime = () => {
+    let reduxTime = this.props.time.activeTime;
+
+    let reduxSeconds = this.props.time.seconds;
+    let seconds = 0;
+
+    if(reduxSeconds === 0) seconds = 1;
+    else seconds = Math.floor((reduxTime % (1000 * 60)) / 1000);
+    
+    return this.props.setSeconds(seconds);
   }
 
   render() {
@@ -56,22 +67,22 @@ class App extends Component {
             <p className="active-msg">ACTIVE SESSION: <span>{this.props.time.activeSession}</span></p>
             <div className="time-wrap">
               <span>
-                <h1>11</h1>
+                <h1>{this.props.time.days}</h1>
                 <p onClick={this.setTimeSession('days')}>Days</p>
               </span>
               <span className="time-divider">:</span>
               <span>
-                <h1>31</h1>
+                <h1>{this.props.time.hours}</h1>
                 <p onClick={this.setTimeSession('hours')}>Hours</p>
               </span>
               <span className="time-divider">:</span>
               <span>
-                <h1>27</h1>
+                <h1>{this.props.time.minutes}</h1>
                 <p onClick={this.setTimeSession('minutes')}>Minutes</p>
               </span>
               <span className="time-divider">:</span>
               <span>
-                <h1>{this.getTime}</h1>
+                <h1>{this.props.time.seconds}</h1>
                 <p onClick={this.setTimeSession('seconds')}>Seconds</p>
               </span>
             </div>

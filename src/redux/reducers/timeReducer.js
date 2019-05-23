@@ -14,7 +14,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    activeTime: 0,
+    activeTime: 1000,
     activeSession: 'days',
     seconds: 0,
     minutes: 0,
@@ -27,12 +27,12 @@ export default (state = initialState, action) => {
         case INCREASE_TIME:
             return {
                 ...state,
-                activeTime: state.activeTime + 1000
+                activeTime: state.activeTime += 1000
             }
         case DECREASE_TIME:
             return {
                 ...state,
-                activeTime: state.activeTime - 1000
+                activeTime: state.activeTime -= 1000
             }
         case SET_SESSION:
             return {
