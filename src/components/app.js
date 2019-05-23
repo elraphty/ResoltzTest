@@ -48,6 +48,7 @@ class App extends Component {
     let seconds = 0;
     let minutes = 0;
     let hours = 0;
+    let days = 0;
 
     if(reduxSeconds === 0) seconds = 1;
     else seconds = Math.floor((reduxTime % (1000 * 60)) / 1000);
@@ -55,10 +56,13 @@ class App extends Component {
     minutes = Math.floor((reduxTime % (1000 * 60 * 60)) / (1000 * 60));
 
     hours = Math.floor((reduxTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    days = Math.floor(reduxTime / (1000 * 60 * 60 * 24));
     
     this.props.setSeconds(seconds);
     this.props.setMinutes(minutes);
     this.props.setHours(hours);
+    this.props.setDays(days);
   }
 
   render() {
