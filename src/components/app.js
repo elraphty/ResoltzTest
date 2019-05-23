@@ -7,14 +7,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // REDUX ACTIONS
-import { 
-  setSession, 
-  increaseTime, 
-  decreaseTime, 
+import {
+  setSession,
+  increaseTime,
+  decreaseTime,
   setSeconds,
   setMinutes,
   setHours,
-  setDays 
+  setDays
 } from '../redux/actions';
 
 class App extends Component {
@@ -31,6 +31,12 @@ class App extends Component {
 
   /** This function will trigger the redux action that will decrease time */
   decreaseTimeValue = () => {
+    // redux state time
+    let reduxTime = this.props.time.activeTime;
+
+    // if redux time is lesser or equals to zero do nthing to avoid negative time
+    if (reduxTime <= 0) return
+
     this.props.decreaseTime();
     return this.getTime();
   }
@@ -50,7 +56,7 @@ class App extends Component {
     let hours = 0;
     let days = 0;
 
-    if(reduxSeconds === 0) seconds = 1;
+    if (reduxSeconds === 0) seconds = 1;
     else seconds = Math.floor((reduxTime % (1000 * 60)) / 1000);
 
     minutes = Math.floor((reduxTime % (1000 * 60 * 60)) / (1000 * 60));
@@ -58,11 +64,12 @@ class App extends Component {
     hours = Math.floor((reduxTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
     days = Math.floor(reduxTime / (1000 * 60 * 60 * 24));
-    
+
     this.props.setSeconds(seconds);
     this.props.setMinutes(minutes);
     this.props.setHours(hours);
     this.props.setDays(days);
+
   }
 
   render() {
@@ -114,12 +121,12 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps, { 
-    increaseTime, 
-    decreaseTime, 
-    setSession ,
+  mapStateToProps, {
+    increaseTime,
+    decreaseTime,
+    setSession,
     setSeconds,
     setMinutes,
     setHours,
     setDays
-})(App);
+  })(App);
