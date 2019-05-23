@@ -56,8 +56,8 @@ class App extends Component {
     let hours = 0;
     let days = 0;
 
-    if (reduxSeconds === 0) seconds = 1;
-    else seconds = Math.floor((reduxTime % (1000 * 60)) / 1000);
+
+    seconds = Math.floor((reduxTime % (1000 * 60)) / 1000);
 
     minutes = Math.floor((reduxTime % (1000 * 60 * 60)) / (1000 * 60));
 

@@ -14,7 +14,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    activeTime: 1000,
+    activeTime: 0,
     activeSession: 'days',
     seconds: 0,
     minutes: 0,
