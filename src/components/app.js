@@ -65,6 +65,7 @@ class App extends Component {
 
     days = Math.floor(reduxTime / (1000 * 60 * 60 * 24));
 
+    // set redux state with new values
     this.props.setSeconds(seconds);
     this.props.setMinutes(minutes);
     this.props.setHours(hours);

@@ -102,7 +102,7 @@ body {
     text-transform: uppercase;
     padding-bottom: 5px;
     margin-top: -10px;
-    margin-right: 40px;
+    margin-right: 45px;
     font-size: 16px;
     text-align: right;
     color: var(--greyColor);
@@ -125,4 +125,223 @@ body {
 
 .time-actions h5:first-child {
     margin-right: 150px;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .container {
+        padding: 20px 50px !important;
+    }
+
+    .book-name {
+        margin-top: 150px;
+        font-size: 15.5px;
+    }
+    
+    .book-title {
+        font-size: 21px;
+        margin-bottom: 100px;
+    }
+    
+    .total-time {
+        font-size: 15.5px;
+        font-weight: bold;
+    }
+    
+    .timer-div {
+        bottom: 90px !important;
+        height: 150px;
+        width: 90%;
+        left: 5%;
+        padding: 40px;
+    }
+
+    .time-wrap span {
+        margin-right: 40px;
+    }
+
+    .time-wrap span:last-child {
+        margin-right: 0px;
+    }
+
+    .time-wrap > span > h1 {
+        font-size: 30px;
+        font-weight: bolder;
+    }
+
+    .time-wrap > span > p {
+        font-size: 15.5px;
+    }
+
+    /* use important on colour to override time-wrap color: white style */
+    .time-divider {
+        font-size: 20px;
+    }
+
+    .active-msg {
+        margin-top: -12px;
+        margin-right: 25px;
+        font-size: 15.5px;
+    }
+
+    .time-actions {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .time-actions h5 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .time-actions h5:first-child {
+        margin-right: 120px;
+    }
+}
+
+
+
+@media screen and (max-width: 800px) {
+    
+    .container {
+        padding: 20px 50px !important;
+    }
+
+    .book-name {
+        margin-top: 150px;
+        font-size: 14.5px;
+    }
+    
+    .book-title {
+        font-size: 21px;
+        margin-bottom: 100px;
+    }
+    
+    .total-time {
+        color: var(--lightGrey);
+        font-size: 14.5px;
+        font-weight: bold;
+    }
+    
+    .timer-div {
+        bottom: 90px !important;
+        height: 150px;
+        width: 90%;
+        left: 5%;
+        padding: 40px;
+    }
+
+    .time-wrap span {
+        margin-right: 20px;
+    }
+
+    .time-wrap span:last-child {
+        margin-right: 0px;
+    }
+
+    .time-wrap > span > h1 {
+        font-size: 28px;
+        font-weight: bolder;
+    }
+
+    .time-wrap > span > p {
+        font-size: 14px;
+    }
+
+    /* use important on colour to override time-wrap color: white style */
+    .time-divider {
+        font-size: 18px;
+    }
+
+    .active-msg {
+        margin-top: -12px;
+        margin-right: 34px;
+        font-size: 14.5px;
+    }
+
+    .time-actions {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .time-actions h5 {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .time-actions h5:first-child {
+        margin-right: 120px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 20px 50px !important;
+    }
+
+    .book-name {
+        margin-top: 150px;
+        font-size: 14px;
+    }
+    
+    .book-title {
+        font-size: 20px;
+        margin-bottom: 100px;
+    }
+    
+    .total-time {
+        color: var(--lightGrey);
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .timer-div {
+        bottom: 90px !important;
+        height: 150px;
+        width: 90%;
+        left: 5%;
+        padding: 40px;
+    }
+
+    .time-wrap span {
+        margin-right: 20px;
+    }
+
+    .time-wrap span:last-child {
+        margin-right: 0px;
+    }
+
+    .time-wrap > span > h1 {
+        font-size: 25px;
+        font-weight: bolder;
+    }
+
+    .time-wrap > span > p {
+        font-size: 12px;
+    }
+
+    /* use important on colour to override time-wrap color: white style */
+    .time-divider {
+        font-size: 18px;
+    }
+
+    .active-msg {
+        margin-top: -12px;
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+    .time-actions {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .time-actions h5 {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .time-actions h5:first-child {
+        margin-right: 120px;
+    }
 }
