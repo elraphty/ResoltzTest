@@ -1,6 +1,7 @@
 # ReduxTest
-
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+
+## This is just a Redux State application that uses only redux to increase and decrease time of a user a user can click on INCREASE to increase time and DECREASE to decrease time an user can also change session by clicking on either of DAYS, HOURS, MINUTES or SECONDS
 
 ### Getting Started
 
@@ -21,7 +22,29 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 Click [here](https://github.com/elraphty/ResoltzTest/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
+> edit .babelrc file and remove ["@babel/env", "@babel/react"]
+> so your .babelrc file should look like this
+
+    {
+        "presets": ["react", "es2015", "stage-1"]
+    }
+
 > npm install
 > npm start
 > then navigate to localhost:8080 on your browser which is the default webpack development port
+```
+
+#### How it Works
+    - To increase the time click on INCREASE
+    - to decrease the time click on DECREASE
+    - to change the session from default days click on either SECONDS, MINUTES, HOURS
+
+#### To Run Test
+```
+> edit .babelrc file and remove ["react", "es2015", "stage-1"]
+> so your .babelrc file should look like this
+
+    {
+        "presets": ["@babel/env", "@babel/react"]
+    }
 ```
