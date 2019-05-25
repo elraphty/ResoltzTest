@@ -1,3 +1,25 @@
+// "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    // "test:watch": "npm run test -- --watch",
+
+// app.test
+
+import { renderComponent , expect } from '../test_helper';
+import App from '../../src/components/app';
+
+describe('App' , () => {
+  let component;
+
+  beforeEach(() => {
+    component = renderComponent(App);
+  });
+
+  it('renders something', () => {
+    expect(component).to.exist;
+  });
+});
+
+// test test_helper
+
 import _$ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
