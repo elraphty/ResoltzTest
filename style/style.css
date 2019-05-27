@@ -12,9 +12,8 @@
     --lightGrey: #CCCCCC;
 }
 
-/* Overriding bootstrap background color with !important */
 body {
-    background: black !important;
+    background: black;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -24,8 +23,8 @@ body {
     background: #304ffe;
     height: 100vh;
     border: 8px solid white;
-    position: relative !important;
-    padding: 100px 170px !important;
+    position: relative;
+    padding: 100px 170px;
 }
 
 .book-name {
@@ -51,7 +50,7 @@ body {
 .timer-div {
     background:black;
     position: absolute;
-    bottom: 90px !important;
+    bottom: 90px;
     height: 200px;
     width: 70%;
     left: 15%;
@@ -91,10 +90,9 @@ body {
     cursor: pointer;
 }
 
-/* use important on colour to override time-wrap color: white style */
 .time-divider {
     font-weight: bolder;
-    color: var(--greyColor) !important;
+    color: var(--greyColor);
     font-size: 20px;
 }
 
@@ -130,7 +128,7 @@ body {
 @media screen and (max-width: 1000px) {
     
     .container {
-        padding: 20px 50px !important;
+        padding: 20px 50px;
     }
 
     .book-name {
@@ -149,7 +147,7 @@ body {
     }
     
     .timer-div {
-        bottom: 90px !important;
+        bottom: 90px;
         height: 150px;
         width: 90%;
         left: 5%;
@@ -173,7 +171,6 @@ body {
         font-size: 15.5px;
     }
 
-    /* use important on colour to override time-wrap color: white style */
     .time-divider {
         font-size: 20px;
     }
@@ -204,7 +201,7 @@ body {
 @media screen and (max-width: 800px) {
     
     .container {
-        padding: 20px 50px !important;
+        padding: 20px 50px;
     }
 
     .book-name {
@@ -224,7 +221,7 @@ body {
     }
     
     .timer-div {
-        bottom: 90px !important;
+        bottom: 90px;
         height: 150px;
         width: 90%;
         left: 5%;
@@ -248,7 +245,6 @@ body {
         font-size: 14px;
     }
 
-    /* use important on colour to override time-wrap color: white style */
     .time-divider {
         font-size: 18px;
     }
@@ -276,7 +272,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .container {
-        padding: 20px 50px !important;
+        padding: 20px 50px;
     }
 
     .book-name {
@@ -296,7 +292,7 @@ body {
     }
     
     .timer-div {
-        bottom: 90px !important;
+        bottom: 90px;
         height: 150px;
         width: 90%;
         left: 5%;
@@ -320,7 +316,6 @@ body {
         font-size: 12px;
     }
 
-    /* use important on colour to override time-wrap color: white style */
     .time-divider {
         font-size: 18px;
     }

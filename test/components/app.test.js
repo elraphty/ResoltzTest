@@ -10,7 +10,11 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from '../../src/components/app';
 
-afterEach(cleanup)
+afterEach(cleanup);
+
+function renderWithRedux() {
+  
+}
 
 it('renders something', () => {
     const { container, getByText } = render(<App/>)

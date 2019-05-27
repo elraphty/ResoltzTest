@@ -49,7 +49,7 @@ class App extends Component {
   /** This funtion uses the redux time milliseconds and converts it to seconds, minutes hours and days  */
   getTime = () => {
     let reduxTime = this.props.time.activeTime;
-    let reduxSeconds = this.props.time.seconds;
+    // let reduxSeconds = this.props.time.seconds;
 
     let seconds = 0;
     let minutes = 0;
