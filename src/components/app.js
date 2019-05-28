@@ -29,20 +29,20 @@ class App extends Component {
   }
 
   /** This function will trigger the redux action that will increase time */
-  increaseTimeValue = () => {
-    this.props.increaseTime();
+  increaseTimeValue = (time) => () => {
+    this.props.increaseTime(time);
     return this.getTime();
   }
 
   /** This function will trigger the redux action that will decrease time */
-  decreaseTimeValue = () => {
+  decreaseTimeValue = (time) => () => {
     // redux state time
     let reduxTime = this.props.time.activeTime;
 
     // if redux time is lesser or equals to zero do nthing to avoid negative time
     if (reduxTime <= 0) return
 
-    this.props.decreaseTime();
+    this.props.decreaseTime(time);
     return this.getTime();
   }
 
@@ -100,8 +100,8 @@ class App extends Component {
               <Time timeValue={this.props.time.seconds} timeText={'Seconds'} click={this.setTimeSession('seconds')} />
             </div>
             <div className="time-actions">
-              <Button click={this.increaseTimeValue} text="increase"></Button>
-              <Button click={this.decreaseTimeValue} text="decrease"></Button>
+              <Button click={this.increaseTimeValue(1000)} text="increase"></Button>
+              <Button click={this.decreaseTimeValue(1000)} text="decrease"></Button>
             </div>
           </div>
         </div>

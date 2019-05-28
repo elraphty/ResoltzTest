@@ -27,12 +27,12 @@ export default (state = initialState, action) => {
         case INCREASE_TIME:
             return {
                 ...state,
-                activeTime: state.activeTime += 1000
+                activeTime: state.activeTime += action.payload
             }
         case DECREASE_TIME:
             return {
                 ...state,
-                activeTime: state.activeTime -= 1000
+                activeTime: state.activeTime -= action.payload
             }
         case SET_SESSION:
             return {

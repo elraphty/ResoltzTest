@@ -13,15 +13,17 @@ import {
     SET_DAYS 
 } from '../actions/types';
 
-export const increaseTime = () => dispatch => {
+export const increaseTime = (time) => dispatch => {
     dispatch({
-        type: INCREASE_TIME
+        type: INCREASE_TIME,
+        payload: time
     });
 }
 
-export const decreaseTime = () => dispatch => {
+export const decreaseTime = (time) => dispatch => {
     dispatch({
-        type: DECREASE_TIME
+        type: DECREASE_TIME,
+        payload: time
     });
 }
 
