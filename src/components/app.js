@@ -17,6 +17,9 @@ import {
   setDays
 } from '../redux/actions';
 
+// components
+import Button from './button';
+
 class App extends Component {
 
   constructor(props) {
@@ -107,8 +110,8 @@ class App extends Component {
               </span>
             </div>
             <div className="time-actions">
-              <h5 onClick={this.increaseTimeValue}>increase</h5>
-              <h5 onClick={this.decreaseTimeValue}>decrease</h5>
+              <Button click={this.increaseTimeValue} text="increase"></Button>
+              <Button click={this.decreaseTimeValue} text="decrease"></Button>
             </div>
           </div>
         </div>
