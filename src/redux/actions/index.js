@@ -13,18 +13,18 @@ import {
     SET_DAYS 
 } from '../actions/types';
 
-export const increaseTime = (time) => dispatch => {
-    dispatch({
-        type: INCREASE_TIME,
-        payload: time
-    });
-}
-
-export const decreaseTime = (time) => dispatch => {
-    dispatch({
-        type: DECREASE_TIME,
-        payload: time
-    });
+export const changeTime = (time, type) => dispatch => {
+    if(type === 'increase') {
+        dispatch({
+            type: INCREASE_TIME,
+            payload: time
+        });
+    } else if(type === 'decrease')  {
+        dispatch({
+            type: DECREASE_TIME,
+            payload: time
+        });
+    }
 }
 
 export const setSession = (session) => dispatch => {

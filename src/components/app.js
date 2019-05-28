@@ -9,8 +9,7 @@ import { connect } from 'react-redux';
 // REDUX ACTIONS
 import {
   setSession,
-  increaseTime,
-  decreaseTime,
+  changeTime,
   setSeconds,
   setMinutes,
   setHours,
@@ -28,23 +27,25 @@ class App extends Component {
     super(props);
   }
 
-  /** This function will trigger the redux action that will increase time */
-  increaseTimeValue = (time) => () => {
-    this.props.increaseTime(time);
-    return this.getTime();
+  /** This function will trigger the redux action that will increase or decrease the value of time */
+  changeTimeValue = (time, type) => () => {
+
+    if (type === 'increase') {
+      this.props.changeTime(time, 'increase');
+      return this.getTime();
+    } else if (type === 'decrease') {
+      // redux state time
+      let reduxTime = this.props.time.activeTime;
+
+      // if redux time is lesser or equals to zero do nthing to avoid negative time
+      if (reduxTime <= 0) return
+
+      this.props.changeTime(time, 'decrease');
+      return this.getTime();
+    }
+
   }
 
-  /** This function will trigger the redux action that will decrease time */
-  decreaseTimeValue = (time) => () => {
-    // redux state time
-    let reduxTime = this.props.time.activeTime;
-
-    // if redux time is lesser or equals to zero do nthing to avoid negative time
-    if (reduxTime <= 0) return
-
-    this.props.decreaseTime(time);
-    return this.getTime();
-  }
 
   /** This function will trigger set session redux action it will set the seesion with the parameter sent to the function, the default session is days */
   setTimeSession = (session) => () => {
@@ -92,16 +93,16 @@ class App extends Component {
             <p className="active-msg">ACTIVE SESSION: <span>{this.props.time.activeSession}</span></p>
             <div className="time-wrap">
               <Time timeValue={this.props.time.days} timeText={'Days'} click={this.setTimeSession('days')} />
-              <TimeDivider/>
+              <TimeDivider />
               <Time timeValue={this.props.time.hours} timeText={'Hours'} click={this.setTimeSession('hours')} />
-              <TimeDivider/>
+              <TimeDivider />
               <Time timeValue={this.props.time.minutes} timeText={'Minutes'} click={this.setTimeSession('minutes')} />
-              <TimeDivider/>
+              <TimeDivider />
               <Time timeValue={this.props.time.seconds} timeText={'Seconds'} click={this.setTimeSession('seconds')} />
             </div>
             <div className="time-actions">
-              <Button click={this.increaseTimeValue(1000)} text="increase"></Button>
-              <Button click={this.decreaseTimeValue(1000)} text="decrease"></Button>
+              <Button click={this.changeTimeValue(1000, 'increase')} text="increase"></Button>
+              <Button click={this.changeTimeValue(1000, 'decrease')} text="decrease"></Button>
             </div>
           </div>
         </div>
@@ -116,8 +117,7 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps, {
-    increaseTime,
-    decreaseTime,
+    changeTime,
     setSession,
     setSeconds,
     setMinutes,
