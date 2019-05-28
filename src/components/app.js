@@ -19,6 +19,8 @@ import {
 
 // components
 import Button from './button';
+import Time from './time';
+import TimeDivider from './timeDivider';
 
 class App extends Component {
 
@@ -89,25 +91,13 @@ class App extends Component {
           <div className="time-content">
             <p className="active-msg">ACTIVE SESSION: <span>{this.props.time.activeSession}</span></p>
             <div className="time-wrap">
-              <span>
-                <h1>{this.props.time.days}</h1>
-                <p onClick={this.setTimeSession('days')}>Days</p>
-              </span>
-              <span className="time-divider">:</span>
-              <span>
-                <h1>{this.props.time.hours}</h1>
-                <p onClick={this.setTimeSession('hours')}>Hours</p>
-              </span>
-              <span className="time-divider">:</span>
-              <span>
-                <h1>{this.props.time.minutes}</h1>
-                <p onClick={this.setTimeSession('minutes')}>Minutes</p>
-              </span>
-              <span className="time-divider">:</span>
-              <span>
-                <h1>{this.props.time.seconds}</h1>
-                <p onClick={this.setTimeSession('seconds')}>Seconds</p>
-              </span>
+              <Time timeValue={this.props.time.days} timeText={'Days'} click={this.setTimeSession('days')} />
+              <TimeDivider/>
+              <Time timeValue={this.props.time.hours} timeText={'Hours'} click={this.setTimeSession('hours')} />
+              <TimeDivider/>
+              <Time timeValue={this.props.time.minutes} timeText={'Minutes'} click={this.setTimeSession('minutes')} />
+              <TimeDivider/>
+              <Time timeValue={this.props.time.seconds} timeText={'Seconds'} click={this.setTimeSession('seconds')} />
             </div>
             <div className="time-actions">
               <Button click={this.increaseTimeValue} text="increase"></Button>
