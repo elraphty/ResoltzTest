@@ -27,21 +27,36 @@ class App extends Component {
     super(props);
   }
 
-  /** This function will trigger the redux action that will increase or decrease the value of time */
-  changeTimeValue = (time, type) => () => {
+  /** This function will trigger the redux action that will increase or decrease the value of time depending on the current active session */
+  changeTimeValue = (type) => () => {
+
+    // get the current active session
+    let activeSession = this.props.time.activeSession;
 
     if (type === 'increase') {
-      this.props.changeTime(time, 'increase');
+      
+      if(activeSession === 'seconds') this.props.changeTime(1000, 'increase');
+      else if (activeSession === 'minutes') this.props.changeTime(1000 * 60, 'increase');
+      else if (activeSession === 'hours') this.props.changeTime(1000 * 60 * 60, 'increase');
+      else if (activeSession === 'days') this.props.changeTime(1000 * 60 * 60 * 24, 'increase');
+
       return this.getTime();
+
     } else if (type === 'decrease') {
+
       // redux state time
       let reduxTime = this.props.time.activeTime;
 
       // if redux time is lesser or equals to zero do nthing to avoid negative time
       if (reduxTime <= 0) return
 
-      this.props.changeTime(time, 'decrease');
+      if(activeSession === 'seconds') this.props.changeTime(1000, 'decrease');
+      else if (activeSession === 'minutes') this.props.changeTime(1000 * 60, 'decrease');
+      else if (activeSession === 'hours') this.props.changeTime(1000 * 60 * 60, 'decrease');
+      else if (activeSession === 'days') this.props.changeTime(1000 * 60 * 60 * 24, 'decrease');
+
       return this.getTime();
+
     }
 
   }
@@ -101,8 +116,8 @@ class App extends Component {
               <Time timeValue={this.props.time.seconds} timeText={'Seconds'} click={this.setTimeSession('seconds')} />
             </div>
             <div className="time-actions">
-              <Button click={this.changeTimeValue(1000, 'increase')} text="increase"></Button>
-              <Button click={this.changeTimeValue(1000, 'decrease')} text="decrease"></Button>
+              <Button click={this.changeTimeValue('increase')} text="increase"></Button>
+              <Button click={this.changeTimeValue('decrease')} text="decrease"></Button>
             </div>
           </div>
         </div>
