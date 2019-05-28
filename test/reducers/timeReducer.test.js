@@ -48,7 +48,7 @@ describe('Time Reducer', () => {
 
     // increase time by 1000 i.e the default session will change from 0 to 1000
     test('changes active time to 1000', () => {
-        expect(timeReducer(undefined, { type: INCREASE_TIME }))
+        expect(timeReducer(undefined, { type: INCREASE_TIME, payload: 1000 }))
             .toEqual({
                 activeTime: 1000,
                 activeSession: 'days',
@@ -62,7 +62,7 @@ describe('Time Reducer', () => {
 
     // decrease time by 1000 i.e the default session will change from 1000 to 0
     test('changes active time to -1000', () => {
-        expect(timeReducer(undefined, { type: DECREASE_TIME }))
+        expect(timeReducer(undefined, { type: DECREASE_TIME, payload: 1000  }))
             .toEqual({
                 activeTime: 0,
                 activeSession: 'days',
