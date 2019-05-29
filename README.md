@@ -35,9 +35,10 @@ Click [here](https://github.com/elraphty/ResoltzTest/releases) then download the
 ```
 
 #### How it Works
+    - to change the session from default DAYS click on either SECONDS, MINUTES, HOURS
     - To increase the time click on INCREASE
     - to decrease the time click on DECREASE
-    - to change the session from default days click on either SECONDS, MINUTES, HOURS
+    - Note the time is increased depending on the current session so if the current session is days increase will increase the time by 1 day and decrease will decrease the time by 1 day and so forth
 
 #### To Run Test
 ```
